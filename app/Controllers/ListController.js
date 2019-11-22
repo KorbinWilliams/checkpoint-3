@@ -3,12 +3,12 @@ import { generateId } from "../utils.js"
 import _store from "../store.js"
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
-  let listsTemplate = '';
+  let listTemplate = '';
   let lists = _store.State.lists;
   lists.forEach(lists => {
-    listsTemplate += lists.getListTemplate();
+    listTemplate += lists.getListTemplate();
   });
-  document.querySelector("#Lists")
+  document.querySelector("#Lists").innerHTML = listTemplate;
 }
 
 //Public
