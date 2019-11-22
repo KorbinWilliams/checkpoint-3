@@ -9,11 +9,14 @@ function _drawLists() {
     listTemplate += lists.getListTemplate();
   });
   document.querySelector("#Lists").innerHTML = listTemplate;
+  // probably more to this savestate than I know, makes it a string maybe map to object?
+  _store.saveState()
 }
 
 //Public
 export default class ListController {
   constructor() {
+    _store.loadState();
     _drawLists();
   }
   addList(event) {
