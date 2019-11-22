@@ -15,23 +15,10 @@ export default class ListController {
     event.preventDefault();
     let formData = event.target;
     let newList = {
-      listname: formData.listname.value
-      id: 
+      listname: formData.listname.value,
+      listId: generateId()
     }
   }
 
-  addSpeaker(event, sId) {
-    event.preventDefault();
-    let formData = event.target;
-    let newSpeaker = {
-      name: formData.name.value,
-      topic: formData.topic.value,
-      time: formData.time.value,
-      sessionId: sId
-    };
-    SessionsService.addSpeaker(newSpeaker);
-    formData.reset();
-    _drawSessions();
-  }
   //TODO: Your app will need the ability to create, and delete both lists and listItems
 }
