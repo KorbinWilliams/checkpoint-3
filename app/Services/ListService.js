@@ -5,14 +5,11 @@ import _store from "../store.js"
 class ListService {
 
   addList(newList) {
-    debugger;
+    // create separate place for listItems in state make add listItem function in cont & serv, fix up model.
     let list = new List(newList)
     _store.State.lists.push(list)
   }
 
-  //TODO  Here is where we handle all of our business logic,
-  //given the information you need in the controller,
-  //what methods will you need to do when this class is first 'constructed'?
   //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
 }
 
