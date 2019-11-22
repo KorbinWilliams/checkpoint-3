@@ -3,7 +3,7 @@ import ListItems from "./ListItem.js"
 
 export default class List {
   constructor({ id, listname, listitem }) {
-    this.id = id || generateId();
+    this.id = id
     this.listname = listname
     this.listitem = listitem.map(l => l = new ListItems(l));
   }
@@ -29,9 +29,9 @@ export default class List {
     `
   }
   getListItemsTemplate() {
-    let template = "";
+    let Template = "";
     this.listItems = this.listItems.forEach(listItems => {
-      template += listItems.Template
+      Template += listItems.Template
     });
   }
 }

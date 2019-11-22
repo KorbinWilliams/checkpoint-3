@@ -1,7 +1,12 @@
 import List from "../Models/List.js";
+import _store from "../store"
 
 //Public
 class ListService {
+  addList(newList) {
+    let list = new List(newList)
+    _store.State.lists.push()
+  }
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
   //what methods will you need to do when this class is first 'constructed'?
