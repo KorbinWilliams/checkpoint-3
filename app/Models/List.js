@@ -2,18 +2,16 @@ import { generateId } from "../utils.js";
 import ListItems from "./ListItem.js"
 
 export default class List {
-  constructor({ id, listname, listitem }) {
+  constructor({ id, listName, listitem }) {
     this.id = id
-    this.listname = listname
+    this.listName = listName
     this.listitem = listitem.map(l => l = new ListItems(l));
   }
-  //Be sure to add the methods needed to create the view template for this model
-  //For starting out, your tasks may be strings alone, but later you may wish to turn them into full objects, that will be up to you
 
   getListTemplate() {
     return `
     <div class="col-3">
-    <h3>${this.listname}</h3>
+    <h3>${this.listName}</h3>
     <div pt-3>${this.getListItemsTemplate()}</div>
     <form onsubmit="app.ListController.addListItem(event, '${this.id}')">
         <div class="form-group">
@@ -30,8 +28,12 @@ export default class List {
   }
   getListItemsTemplate() {
     let Template = "";
-    this.listItems = this.listItems.forEach(listItems => {
-      Template += listItems.Template
-    });
+    // this.listItems = this.listItems.forEach(listItems => {
+    //   Template += listItems.Template
+    this.listitem = Template
+    // });
   }
 }
+
+
+// add this after getting add list to work ${this.getListItemsTemplate()} line 17

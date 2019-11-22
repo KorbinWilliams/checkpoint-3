@@ -1,6 +1,6 @@
 import ListService from "../Services/ListService.js";
 import { generateId } from "../utils.js"
-import _store from "../store"
+import _store from "../store.js"
 //TODO Don't forget to render to the screen after every data change.
 function _drawLists() {
   let listsTemplate = '';
@@ -16,7 +16,7 @@ export default class ListController {
   constructor() {
     _drawLists();
   }
-
+  debugger;
   addList(event) {
     event.preventDefault();
     let formData = event.target;

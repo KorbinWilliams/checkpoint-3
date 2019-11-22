@@ -1,11 +1,11 @@
 import List from "../Models/List.js";
-import _store from "../store"
+import _store from "../store.js"
 
 //Public
 class ListService {
   addList(newList) {
     let list = new List(newList)
-    _store.State.lists.push()
+    _store.State.lists.push(list)
   }
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
