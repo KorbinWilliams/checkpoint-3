@@ -2,17 +2,17 @@ import { generateId } from "../utils.js";
 import ListItems from "./ListItem.js"
 
 export default class List {
-  constructor({ id, listName, listitem }) {
+  constructor({ id, listName }) {
     this.id = id
     this.listName = listName
-    this.listitem = listitem.map(l => l = new ListItems(l));
+    // (work in later add listitem to constructor) this.listitem = listitem.map(l => new ListItems(l));
   }
 
   getListTemplate() {
     return `
-    <div class="col-3">
+    <div class="col-3 align-items-center">
     <h3>${this.listName}</h3>
-    <div pt-3>${this.getListItemsTemplate()}</div>
+    <div>${this.getListItemsTemplate()}</div>
     <form onsubmit="app.ListController.addListItem(event, '${this.id}')">
         <div class="form-group">
             <label for="Listitem">List Item</label>

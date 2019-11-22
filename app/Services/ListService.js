@@ -3,10 +3,13 @@ import _store from "../store.js"
 
 //Public
 class ListService {
+
   addList(newList) {
+    debugger;
     let list = new List(newList)
     _store.State.lists.push(list)
   }
+
   //TODO  Here is where we handle all of our business logic,
   //given the information you need in the controller,
   //what methods will you need to do when this class is first 'constructed'?

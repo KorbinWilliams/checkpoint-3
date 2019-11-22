@@ -17,11 +17,10 @@ export default class ListController {
     _drawLists();
   }
   addList(event) {
-    debugger;
     event.preventDefault();
     let formData = event.target;
     let newList = {
-      listName: formData.listName.value,
+      listName: formData.ListName.value,
       id: generateId()
     }
     ListService.addList(newList)
