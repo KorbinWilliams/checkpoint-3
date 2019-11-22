@@ -1,5 +1,11 @@
 export default class ListItems {
   constructor(data) {
-    this.
+    this.listItems = listItems
+  }
+
+  getTemplate() {
+    return `
+    <h5>${this.listItems}</h5>
+    `
   }
 }
