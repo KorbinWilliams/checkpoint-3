@@ -16,15 +16,16 @@ export default class ListController {
   constructor() {
     _drawLists();
   }
-  debugger;
   addList(event) {
+    debugger;
     event.preventDefault();
     let formData = event.target;
     let newList = {
-      listname: formData.listname.value,
+      listName: formData.listName.value,
       id: generateId()
     }
     ListService.addList(newList)
+    _drawLists()
   }
 
   addListItems(event) {
