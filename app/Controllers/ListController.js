@@ -31,7 +31,12 @@ export default class ListController {
   }
 
   addListItems(event) {
-
+    event.preventDefault()
+    let formData = event.target;
+    let newItem = {
+      listItem: formData.ListItem.value,
+      listId: 
+    }
   }
 
   //TODO: (make lists is good, next make items, remove items, remove lists)
