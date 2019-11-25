@@ -5,7 +5,7 @@ export default class List {
   constructor({ id, listName }) {
     this.id = id
     this.listName = listName
-    // (work in later add listitem to constructor) this.listitem = listitem.map(l => new ListItems(l));
+    this.listItem = listItem.map(l => new ListItems(l));
   }
 
   getListTemplate() {
@@ -15,8 +15,8 @@ export default class List {
     <div>${this.getListItemsTemplate()}</div>
     <form onsubmit="app.ListController.addListItem(event, '${this.id}')">
         <div class="form-group">
-            <label for="Listitem">List Item</label>
-            <input type="text" name="Listitem" id="" class="form-control" placeholder="Listitem">
+            <label for="listItem">List Item</label>
+            <input type="text" name="listItem" class="form-control" placeholder="Listitem">
         </div>
         <div>
             <button type="submit" class="btn btn-primary">submit</button>
@@ -28,10 +28,10 @@ export default class List {
   }
   getListItemsTemplate() {
     let Template = "";
-    // this.listItems = this.listItems.forEach(listItems => {
-    //   Template += listItems.Template
-    this.listitem = Template
-    // });
+    this.listItems = this.listItems.forEach(listItems => {
+      Template += listItems.Template
+      this.listitem = Template
+    });
   }
 }
 
