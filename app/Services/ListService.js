@@ -1,7 +1,6 @@
 import List from "../Models/List.js";
 import _store from "../store.js"
 import ListItems from "../Models/ListItem.js";
-import { generateId } from "../utils.js";
 
 //Public
 class ListService {
@@ -12,8 +11,9 @@ class ListService {
   }
 
   addListItems(newListItem) {
-    let listItem = new listItem(newListItem)
-    _store.State.lists.find(List => List.listId == listItem.listId)
+    let listItem = new ListItems(newListItem)
+    let list = _store.State.lists.find(List => List.listId == List.)
+    list.listItems.push()
   }
 
 
