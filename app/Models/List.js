@@ -16,7 +16,7 @@ export default class List {
     <div>${this.getItemsTemplate()}</div>
     <form onsubmit="app.listController.addListItems(event, '${this.listId}')">
             <label for="listItems">List Item</label>
-            <input type="text" name="listItems" class="form-control" placeholder="Listitem">
+            <input type="text" name="listItem" class="form-control" placeholder="Listitem">
             <button type="submit">Submit</button>        
     </form>
 </div>
@@ -24,12 +24,11 @@ export default class List {
     `
   }
   getItemsTemplate() {
-    debugger;
     let template = "";
     this.listItems.forEach(listItem => {
       template += listItem.Template
-      this.listItem = template
     });
+    return template;
   }
 }
 

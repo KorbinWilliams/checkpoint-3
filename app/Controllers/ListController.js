@@ -5,7 +5,7 @@ import _store from "../store.js"
 
 function _drawLists() {
   let listTemplate = '';
-  let lists = _store.State.lists;
+  let lists = _store.Lists;
   lists.forEach(lists => {
     listTemplate += lists.ListTemplate;
   });
@@ -35,10 +35,10 @@ export default class ListController {
     event.preventDefault();
     let formData = event.target;
     let newListItem = {
-      listItems: formData.listItems.value,
+      listItem: formData.listItem.value,
       listId: listId
     }
-    ListService.addListItems(newListItem)
+    ListService.addListItems(newListItem, listId)
     formData.reset()
     _drawLists()
   }
