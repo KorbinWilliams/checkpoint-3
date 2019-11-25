@@ -5,7 +5,6 @@ import _store from "../store.js"
 
 function _drawLists() {
   let listTemplate = '';
-  debugger;
   let lists = _store.State.lists;
   lists.forEach(lists => {
     listTemplate += lists.ListTemplate;
@@ -20,7 +19,6 @@ export default class ListController {
     _drawLists();
   }
   addList(event) {
-    debugger;
     event.preventDefault();
     let formData = event.target;
     let newList = {
@@ -28,16 +26,17 @@ export default class ListController {
       listId: generateId()
     }
     ListService.addList(newList)
+    formData.reset()
     _drawLists()
   }
 
   addListItems(event, listId) {
-    event.preventDefault()
+    debugger;
+    event.preventDefault();
     let formData = event.target;
     let newListItem = {
-      listItem: formData.ListItem.value,
+      listItems: formData.listItems.value,
       listId: listId
-      // add listId/ change Id on lists to listId 
     }
     ListService.addListItems(newListItem)
     formData.reset()

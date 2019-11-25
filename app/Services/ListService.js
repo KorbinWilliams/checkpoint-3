@@ -12,8 +12,8 @@ class ListService {
   }
 
   addListItems(newListItem) {
-    let listItem = new ListItems(newListItem)
-    _store.State.listItems.push(listItem)
+    let listItem = new listItem(newListItem)
+    _store.State.lists.find(List => List.listId == listItem.listId)
   }
 
 

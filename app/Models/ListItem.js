@@ -6,7 +6,7 @@ export default class ListItems {
     this.listItem = listItem
   }
 
-  getTemplate() {
+  get Template() {
     return `
     <h5>${this.listItem}</h5>
     `
