@@ -25,20 +25,23 @@ export default class ListController {
     let formData = event.target;
     let newList = {
       listName: formData.ListName.value,
-      id: generateId()
+      listId: generateId()
     }
     ListService.addList(newList)
     _drawLists()
   }
 
-  addListItems(event) {
+  addListItems(event, listId) {
     event.preventDefault()
     let formData = event.target;
-    let newItem = {
+    let newListItem = {
       listItem: formData.ListItem.value,
+      id: generateId(),
       listId: listId
+      // add listId/ change Id on lists to listId 
     }
     ListService.addListItems(newListItem)
+    formData.reset()
     _drawLists()
   }
 
