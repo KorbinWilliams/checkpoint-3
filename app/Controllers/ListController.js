@@ -20,6 +20,7 @@ export default class ListController {
     _drawLists();
   }
   addList(event) {
+    debugger;
     event.preventDefault();
     let formData = event.target;
     let newList = {
@@ -37,7 +38,8 @@ export default class ListController {
       listItem: formData.ListItem.value,
       listId: listId
     }
-    ListService.addListItems(newItem)
+    ListService.addListItems(newListItem)
+    _drawLists()
   }
 
   //TODO: (make lists is good, next make items, remove items, remove lists)

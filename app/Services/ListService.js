@@ -1,5 +1,6 @@
 import List from "../Models/List.js";
 import _store from "../store.js"
+import ListItems from "../Models/ListItem.js";
 
 //Public
 class ListService {
@@ -9,8 +10,9 @@ class ListService {
     _store.State.lists.push(list)
   }
 
-  addListItems() {
-
+  addListItems(newListItem) {
+    let listItem = new ListItems(newListItem)
+    _store.State.listItems.push(listItem)
   }
 
 

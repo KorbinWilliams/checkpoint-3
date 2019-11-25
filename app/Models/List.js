@@ -28,9 +28,9 @@ export default class List {
   }
   getListItemsTemplate() {
     let Template = "";
-    this.listItems = this.listItems.forEach(listItems => {
-      Template += listItems.Template
-      this.listitem = Template
+    this.listItem = listItem.forEach(listItem => {
+      Template += listItem.Template
+      this.listItem = Template
     });
   }
 }
