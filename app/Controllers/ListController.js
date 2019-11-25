@@ -8,17 +8,15 @@ function _drawLists() {
   debugger;
   let lists = _store.State.lists;
   lists.forEach(lists => {
-    listTemplate += lists.getListTemplate();
+    listTemplate += lists.ListTemplate;
   });
   document.querySelector("#Lists").innerHTML = listTemplate;
   // probably more to this savestate than I know, makes it a string maybe map to object?
-  _store.saveState()
 }
 
 //Public
 export default class ListController {
   constructor() {
-    _store.loadState();
     _drawLists();
   }
   addList(event) {
