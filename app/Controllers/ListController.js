@@ -2,8 +2,10 @@ import ListService from "../Services/ListService.js";
 import { generateId } from "../utils.js"
 import _store from "../store.js"
 
+
 function _drawLists() {
   let listTemplate = '';
+  debugger;
   let lists = _store.State.lists;
   lists.forEach(lists => {
     listTemplate += lists.getListTemplate();
@@ -36,7 +38,6 @@ export default class ListController {
     let formData = event.target;
     let newListItem = {
       listItem: formData.ListItem.value,
-      id: generateId(),
       listId: listId
       // add listId/ change Id on lists to listId 
     }

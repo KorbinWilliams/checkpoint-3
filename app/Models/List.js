@@ -2,7 +2,7 @@ import { generateId } from "../utils.js";
 import ListItems from "./ListItem.js"
 
 export default class List {
-  constructor({ listId, listName, listItem }) {
+  constructor({ listId = generateId, listName, listItem }) {
     this.listId = listId
     this.listName = listName
     this.listItem = listItem.map(l => new ListItems(l));
@@ -34,6 +34,5 @@ export default class List {
     });
   }
 }
-
 
 // add this after getting add list to work ${this.getListItemsTemplate()} line 17

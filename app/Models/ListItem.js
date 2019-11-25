@@ -1,8 +1,7 @@
 import { generateId } from "../utils.js"
 
 export default class ListItems {
-  constructor({ id, listId, listItem }) {
-    this.id = id
+  constructor({ listId, listItem }) {
     this.listId = listId
     this.listItem = listItem
   }
