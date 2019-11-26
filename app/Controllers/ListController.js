@@ -47,5 +47,9 @@ export default class ListController {
     _drawLists()
   }
 
+  removeListItem(listId, listItemId) {
+    ListService.removeListItem(listId, listItemId);
+    _drawLists()
+  }
   //TODO: (make lists is good, next make items, remove items, remove lists)
 }
