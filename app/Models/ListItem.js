@@ -10,7 +10,7 @@ export default class ListItems {
   get Template() {
     return `
     <h5>${this.listItem}</h5>
-    <button onclick="app.listcontroller.removeListItem('${this.listId}','${this.id}')"></button>
+    <button class="btn btn-primary" onclick="app.listController.removeListItem('${this.listId}','${this.id}')"></button>
     `
   }
 }
