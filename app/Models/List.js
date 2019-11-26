@@ -12,6 +12,7 @@ export default class List {
   get ListTemplate() {
     return `
     <div class="col-3 align-items-center">
+    <button onclick="app.listcontroller.removeList(listId)">Remove this list</button>
     <h3>${this.listName}</h3>
     <div>${this.getItemsTemplate()}</div>
     <form onsubmit="app.listController.addListItems(event, '${this.listId}')">

@@ -1,14 +1,9 @@
 import List from "../Models/List.js";
 import _store from "../store.js"
 import ListItems from "../Models/ListItem.js";
-import store from "../store.js";
 
 //Public
 class ListService {
-  removeList(listId) {
-    let listRemoved = _store.State.lists.find(l => l.listId == listId);
-    _store.State.lists.filter(lists => lists.listId !== listRemoved.listId)
-  }
 
   addList(newList) {
     let list = new List(newList)
@@ -22,6 +17,10 @@ class ListService {
     _store.saveState()
   }
 
+  removeList(listId) {
+    let listRemoved = _store.State.lists.find(l => l.listId == listId);
+    _store.State.lists.filter(lists => lists.listId !== listRemoved.listId)
+  }
 
   //NOTE You will need this code to persist your data into local storage, be sure to call the store method to save after each change
 }

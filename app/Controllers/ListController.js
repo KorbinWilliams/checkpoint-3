@@ -31,7 +31,6 @@ export default class ListController {
   }
 
   addListItems(event, listId) {
-    debugger;
     event.preventDefault();
     let formData = event.target;
     let newListItem = {
